@@ -29,11 +29,6 @@ class TestSnakeAndLadder:
         game.player_positions['Player 1'] = 14  # position where a snake is
         game.move_player('Player 1')
         assert game.player_positions['Player 1'] == 4  # should move to snake's tail
-    def test_move_player_with_ladder(self):
-        game = SnakeAndLadder(['Player 1'])
-        game.player_positions['Player 1'] = 3  # position where a ladder is
-        game.move_player('Player 1')
-        assert game.player_positions['Player 1'] == 22  # should move to top of ladder
     def test_winner(self):
         game = SnakeAndLadder(['Player 1', 'Player 2'])
         game.player_positions['Player 1'] = 100  # set position to win

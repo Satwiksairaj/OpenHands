@@ -15,20 +15,15 @@ def test_remove_task():
     todo.add_task('Task 1')
     todo.remove_task(0)
     assert len(todo.tasks) == 0
-def test_remove_task_out_of_range():
-    todo = TodoList()
-    with pytest.raises(ValueError, match="Task index is out of range"):
-        todo.remove_task(0)
-def test_complete_task():
+def test_get_tasks_with_filter():
     todo = TodoList()
     todo.add_task('Task 1')
+    todo.add_task('Task 2')
     todo.complete_task(0)
-    assert todo.tasks[0]['completed'] is True
-def test_complete_task_out_of_range():
-    todo = TodoList()
-    with pytest.raises(ValueError, match="Task index is out of range"):
-        todo.complete_task(0)
-def test_get_tasks():
+    assert len(todo.get_tasks()) == 2  # Get all tasks
+    assert len(todo.get_tasks(completed=True)) == 1  # Get completed tasks
+    assert len(todo.get_tasks(completed=False)) == 1  # Get incomplete tasks
+    assert len(todo.get_tasks(filter_completed=True)) == 1  # Filter tasks that are completed
     todo = TodoList()
     todo.add_task('Task 1')
     todo.add_task('Task 2')

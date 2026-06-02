@@ -11,12 +11,12 @@ class TodoList:
             self.tasks.pop(task_index)
         except IndexError:
             raise ValueError("Task index is out of range")
-    def complete_task(self, task_index: int) -> None:
-        try:
-            self.tasks[task_index]['completed'] = True
-        except IndexError:
-            raise ValueError("Task index is out of range")
-    def get_tasks(self, completed: bool = None) -> list:
+    def get_tasks(self, completed: bool = None, filter_completed: bool = False) -> list:
+        if completed is not None:
+            return [task for task in self.tasks if task['completed'] == completed]
+        if filter_completed:
+            return [task for task in self.tasks if task['completed']]
+        return self.tasks
         if completed is None:
             return self.tasks
         return [task for task in self.tasks if task['completed'] == completed]
