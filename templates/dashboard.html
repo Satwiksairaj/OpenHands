@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Dashboard</title>
+</head>
+<body>
+    <h1>E-commerce Dashboard</h1>
+    <h2>Stock Information:</h2>
+    <ul>
+        {% for product in stock %}
+            <li>{{ product.name }} - ${{ product.price }} (Quantity: {{ product.quantity }})</li>
+        {% endfor %}
+    </ul>
+    <h2>Sales Information:</h2>
+    <ul>
+        {% for sale in sales %}
+            <li>Sold {{ sale.quantity_sold }} of Product ID: {{ sale.product_id }}</li>
+        {% endfor %}
+    </ul>
+    <footer>
+        <p>Total Units Sold: {{ total_sales }}</p>
+    </footer>
+</body>
+</html>
