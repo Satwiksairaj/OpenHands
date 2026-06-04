@@ -1,7 +1,15 @@
 # string_utils.py
 
 def reverse_string(text: str) -> str:
-    """Return the reversed string of the given text."""
+    """
+    Reverses the input string.
+
+    Args:
+        text (str): The string to be reversed.
+
+    Returns:
+        str: The reversed string.
+    """
     if text == '':
         return ''
     return text[::-1]
