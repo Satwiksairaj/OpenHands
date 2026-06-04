@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sell Product</title>
+</head>
+<body>
+    <h1>Sell {{ product_name }}</h1>
+    <p>Available Stock: {{ available_stock }}</p>
+    <form action="/record_sale" method="POST">
+        <input type="number" name="quantity" placeholder="Quantity to sell" required>
+        <button type="submit">Sell</button>
+    </form>
+    <a href="/">Back to Dashboard</a>
+</body>
+</html>
