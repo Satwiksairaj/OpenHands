@@ -2,52 +2,8 @@ class TicTacToe:
     def __init__(self):
         self.board = [' ' for _ in range(9)]  # A list to hold the board state
         self.current_player = 'X'
-    def __init__(self):
-        self.board = [' ' for _ in range(9)]  # A list to hold the board state
-        self.current_player = 'X'}}
-    def __init__(self):
-        self.board = [' ' for _ in range(9)]  # A list to hold the board state
-        self.current_player = 'X'}}]}  
-    def __init__(self):
-        self.board = [' ' for _ in range(9)]  # A list to hold the board state
-        self.current_player = 'X'
-    def __init__(self):
-        self.board = [' ' for _ in range(9)]  # A list to hold the board state
-        self.current_player = 'X'
-    def __init__(self):
-        self.board = [' ' for _ in range(9)]  # A list to hold the board state
-        self.current_player = 'X' 
-    def __init__(self):
-        self.board = [' ' for _ in range(9)]  # A list to hold the board state
-        self.current_player = 'X'
 
-def play(self):
-        while True:
-            self.print_board()
-            move = int(input(f'Player {self.current_player}, enter your move (0-8): '))
-            if self.make_move(move):
-                winner = self.check_winner()
-                if winner:
-                    self.print_board()
-                    print(f'Player {winner} wins!')
-                    break
-                elif ' ' not in self.board:
-                    self.print_board()
-                    print('The game is a tie!')
-                    break
-                self.switch_player()
-            else:
-                print('Invalid move. Try again.')
-
-if __name__ == '__main__':
-    game = TicTacToe()
-    game.play()
-
-            def __init__(self):
-        self.board = [' ' for _ in range(9)]  # A list to hold the board state
-        self.current_player = 'X'
-
-def play(self):
+    def play(self):
         while True:
             self.print_board()
             move = int(input(f'Player {self.current_player}, enter your move (0-8): '))
@@ -88,3 +44,34 @@ def play(self):
     def reset_game(self):
         self.board = [' ' for _ in range(9)]
         self.current_player = 'X'
+
+    def print_board(self):
+        for i in range(3):
+            print('|'.join(self.board[i*3:(i+1)*3]))
+            if i<2: print('-----')
+
+if __name__ == '__main__':
+    game = TicTacToe()
+    game.play()
+
+def play(self):
+        while True:
+            self.print_board()
+            move = int(input(f'Player {self.current_player}, enter your move (0-8): '))
+            if self.make_move(move):
+                winner = self.check_winner()
+                if winner:
+                    self.print_board()
+                    print(f'Player {winner} wins!')
+                    break
+                elif ' ' not in self.board:
+                    self.print_board()
+                    print('The game is a tie!')
+                    break
+                self.switch_player()
+            else:
+                print('Invalid move. Try again.')
+
+if __name__ == '__main__':
+    game = TicTacToe()
+    game.play()
