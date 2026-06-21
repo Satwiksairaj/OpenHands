@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Store</title>
+</head>
+<body>
+    <h1>Products</h1>
+    <ul>
+    {% for product in products %}   
+        <li>{{ product['name'] }} - Stock: {{ product['stock'] }}</li>
+    {% endfor %}
+    </ul>
+
+    <h2>Record Sale</h2>
+    <form action="/record_sale" method="post">
+        <input type="text" name="product_name" placeholder="Product Name" required/>
+        <input type="number" name="quantity_sold" placeholder="Quantity Sold" required/>
+        <button type="submit">Record Sale</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Store Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        h1 { color: #333; }
+        h2 { color: #555; border-bottom: 1px solid #ddd; padding-bottom: 5px; }
+        form { margin-bottom: 20px; }
+        label { display: inline-block; width: 120px; }
+        input { margin: 5px 0; padding: 5px; }
+        button { padding: 8px 16px; background: #007bff; color: white; border: none; cursor: pointer; }
+        button:hover { background: #0056b3; }
+        ul { list-style-type: none; padding: 0; }
+        li { padding: 8px; margin: 4px 0; background: #f5f5f5; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <h1>E-commerce Store Dashboard</h1>
+
+    <h2>Products</h2>
+    <ul>
+        {% for product in products %}
+        <li>{{ product.name }} - Stock: {{ product.stock }} | Sales: {{ product.sales }}</li>
+        {% endfor %}
+    </ul>
+    {% if not products %}
+    <p>No products yet. Add one below!</p>
+    {% endif %}
+
+    <h2>Add Product</h2>
+    <form action="/add_product" method="POST">
+        <label for="name">Product Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="stock">Stock Level:</label>
+        <input type="number" id="stock" name="stock" required>
+        <button type="submit">Add Product</button>
+    </form>
+
+    <h2>Record Sale</h2>
+    <form action="/record_sale" method="POST">
+        <label for="product_id">Product ID:</label>
+        <input type="number" id="product_id" name="product_id" required>
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" value="1" required>
+        <button type="submit">Record Sale</button>
+    </form>
+</body>
+</html>
