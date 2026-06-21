@@ -1,0 +1,9 @@
+Flask==2.3.2
+Flask-SQLAlchemy==2.5.1
+SQLAlchemy==1.4.46
+pytest>=7.0.0
+Flask==2.3.2
+Flask-SQLAlchemy==2.5.1
+SQLAlchemy==1.4.46
+werkzeug==2.3.3
+werkzeug==2.3.3

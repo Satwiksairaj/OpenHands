@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Record Sale</title>
+</head>
+<body>
+    <h1>Record a Sale</h1>
+    <form action="/record_sale" method="post">
+        <label for="product_id">Select Product:</label>
+        <select id="product_id" name="product_id" required>
+            {% for product in products %}
+                <option value="{{ product.id }}">{{ product.name }}</option>
+            {% endfor %}
+        </select>
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" required>
+        <button type="submit">Record Sale</button>
+    </form>
+    <a href="/">Back to Dashboard</a>
+</body>
+</html>
