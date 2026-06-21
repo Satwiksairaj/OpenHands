@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Store</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+    <h1>E-commerce Store - Products</h1>
+    <h2>Add Product</h2>
+    <form action="/add_product" method="post">
+        <input type="text" name="name" placeholder="Product Name" required/>
+        <input type="number" name="stock" placeholder="Stock Level" required/>
+        <button type="submit">Add Product</button>
+    </form>
+
+    <h2>Products</h2>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Stock</th>
+            <th>Sales</th>
+        </tr>
+        {% for product in products %}
+        <tr>
+            <td>{{ product.name }}</td>
+            <td>{{ product.stock }}</td>
+            <td>{{ product.sales }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Record Sale</h2>
+    <form action="/record_sale" method="post">
+        <input type="hidden" name="product_id" value="{{ product.id }}"/>
+        <input type="number" name="quantity" placeholder="Quantity Sold" required/>
+        <button type="submit">Record Sale</button>
+    </form>
+</body>
+</html>
