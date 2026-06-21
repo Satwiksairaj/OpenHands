@@ -1,0 +1,79 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Posts</title>
+</head>
+<body>
+    <h1>Blog Posts</h1>
+    <a href="/post/new">Create New Post</a>
+    <ul>
+        {% for post in posts %}
+            <li>
+                <h2><a href="/post/{{ post.id }}">{{ post.title }}</a></h2>
+                <p>{{ post.content }}</p>
+                <small>{{ post.date }}</small>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Posts</title>
+</head>
+<body>
+    <h1>Blog Posts</h1>
+    <a href="/post/new">Create New Post</a>
+    <ul>
+        {% for post in posts %}
+            <li>
+                <h2><a href="/post/{{ post.id }}">{{ post.title }}</a></h2>
+                <p>{{ post.content }}</p>
+                <small>{{ post.date }}</small>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Posts</title>
+</head>
+<body>
+    <h1>Blog Posts</h1>
+    <a href="/post/new">Create New Post</a>
+    <ul>
+        {% for post in posts %}
+            <li>
+                <h2><a href="/post/{{ post.id }}">{{ post.title }}</a></h2>
+                <p>{{ post.content }}</p>
+                <small>{{ post.date }}</small>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Posts</title>
+</head>
+<body>
+<h1>Blog Posts</h1>
+<ul>
+    {% for post in posts %}
+        <li>
+            <a href="/post/{{ loop.index0 }}"><strong>{{ post.title }}</strong></a>
+            <p>{{ post.content }}</p>
+            <small>Posted on: {{ post.date }}</small>
+        </li>
+    {% endfor %}
+</ul>
+<a href="/post/new">Create New Post</a>
+</body>
+</html>
